@@ -20,6 +20,8 @@ const handleClick = () => {
 //   coord.value ++;
 //   gameStore.moveForward();
 // }
+
+// new comment
 </script>
 
 <template>
