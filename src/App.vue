@@ -4,6 +4,8 @@ import TheWelcome from './components/TheWelcome.vue'
 import AreaDescription from "@/components/AreaDescription.vue";
 import {ref} from "vue";
 import { useGameStateStore } from "@/store/useGameStateStore.js";
+import FirstPage from "@/components/FirstPage.vue";
+import ActionPanel from "@/components/ActionPanel.vue";
 
 const gameStore = useGameStateStore();
 
@@ -26,49 +28,26 @@ const handleClick = () => {
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <AreaDescription />
-
-      {{ gameStore.coord }}
-
-      <button class="btn" @click="gameStore.moveForward()">Go forth</button>
-      <button class="btn" @click="gameStore.moveBackward()">Go back</button>
+      <FirstPage />
     </div>
   </header>
+  <body>
+    <div>
+      You stand at: {{ gameStore.coord }}
+    </div>
+    <div>
+      <AreaDescription />
+    </div>
+    <div>
+      <ActionPanel />
+    </div>
+  </body>
 
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
 <style scoped>
 header {
   line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
 }
 </style>
