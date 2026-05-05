@@ -15,6 +15,11 @@
       <div>
         <ActionPanel />
       </div>
+  <div>
+    <p>
+      У стены стоит деревянный <router-link :to="{name: 'cupboard'}">шкаф</router-link>
+    </p>
+  </div>
 </template>
 
 <style scoped>
