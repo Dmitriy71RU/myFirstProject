@@ -2,9 +2,11 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import App from './App.vue'
 import {createPinia} from "pinia";
+import router from './router'      // <-- импорт созданного роутера
 
-const app = createApp(App)
 const pinia = createPinia()
-app.use(pinia)
+const app = createApp(App)
 
-createApp(App).mount('#app')
+app.use(pinia)
+app.use(router)                    // <-- регистрация роутера
+app.mount('#app')
